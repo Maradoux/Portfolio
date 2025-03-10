@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(90 deg, black, grey);
+    background-color: #060606;
+}
+
+@media (max-width:991px) {
+    .sidebar{
+        background-color: rgba(18, 117, 222, 0.123);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.social-links{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: white;
+    gap: 30px;
+    list-style: none    ;
+    font-size: 20px;
+}
+
+:root {
+    --primary-color: #cc5959;
+    --secondary-color: #2ecc71;
+    --secondar-color-hsla: #0e05bd7d;
+}
+
+
+/* WHO AM I? */
+.who .circle{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    /* border: solid 2px; */
+    /* margin: 30px; */
+}
+
+
+.country{
+    display: block;
+}
+
+.country img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+} 
+
+
+.cta{
+    margin: auto;
+    padding: 50px 100px;
+}
+
+@media (max-width:768px) {
+    .cta{
+        padding: 35px;
+    }
+}
+
+.type-container{
+    font-size: 3rem;    
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px; /* Space for the border */
+    cursor: pointer;
+    animation:  0.7s infinite;
+}
+
+@media (max-width: 767px){
+    .type-container{
+        font-size: 35px;
+    }
+}
+
+#cursor{
+    /* border-right: 2px solid black; */
+    font-size: 3rem;
+    margin-top: 0;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.profile{
+    font-size: 16px;
+    font-weight: 500;
+    color: aliceblue;
+    font-weight: light;
+}
+
+@media (max-width: 767px){
+    .profile{
+        font-size: 13px;
+    }
+}
+
+.bg-img{
+    background-image: url(../Images/me.png);
+    background-size: contain;
+    background-position:right 20%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+}
+
+.circle img{
+    width: 350px;
+    height: auto;
+}
+
+.download button{
+    color: #1274de;
+    font-size: 14px;
+    background-color: #1275de2c;
+    border: 1px solid #1274de;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .download button{
+        background-color: #1275de;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+    }
+}
+
+.cta button:hover{
+    color: #1274de;
+    background-color: #1275de45;
+    border: 1px solid white;
+    font-weight: bold;
+    font-size: 15px;
+    /* border-radius: 5px; */
+    /* text-transform: uppercase !important; */
+}
+
+.container{
+    padding: 0 20px;
+    display: flex;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #060505 20%, #0f0e0e 80%, transparent);
+}
+
+.scroller{
+    display: flex;
+    gap: 100px;
+    animation: scroller 25s linear infinite;
+    animation-delay: calc(5s / -1);
+}
+.scroller:nth-child(){
+    animation: second-scroller 25s linear infinite;
+    animation-delay: calc(5s / -1);
+}
+
+@keyframes scroller{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes second-scroller{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}
+
+/* .experience{
+    justify-content: center;
+    gap: 100px !important;
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.exp-container{
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    border-radius: 30px;
+    background-color: #1e1d1d;
+}
+
+.number{
+    width: 60px;
+    height: 60px;
+    bottom: 250px;
+    position: absolute;
+    border-radius: 60%;
+    font-size: 4rem;
+    color: whitesmoke;
+    background-color: var(--primary-color);
+} */
+
+.cardgroup{
+    gap: 100px;
+    display: flex;
+    justify-content: center;
+}
+.cardbody{
+    background-color: #3e3c3c64;
+}
+.mile-card{
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+}
+.mile{
+    gap: 50px;
+    box-shadow: 2px 4px 20px grey;
+
+}
+.mile h3{
+    padding-left: 30px;
+    color: white;
+}
+.mile p{
+    padding: 30px;
+    color: white;
+}
+
+.exp{
+    background-color: #1274de;
+    width: 500px;
+}
+
+.project-container{
+    padding: 20px;
+    /* text-align: center; */
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: #1e1d1d;
+    border-radius: 30px;
+    width: 150px;
+    height: 120px;
+    color: #1274de;
+}
+
+@media (max-width:768px) {
+    .project-container{
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        font-size: 40px;
+    }
+}
+.project-container span{
+    background-color: #060606;
+    border-radius: 10px;
+    display: grid;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media (max-width:768px) {
+    .project-container span{
+        font-size: 13px;
+        padding: 2px;
+    }
+}
+
+.project-fluid{
+    justify-content: center;
+    gap: 80px;
+}
+
+@media (max-width:768px) {
+    .project-fluid{
+        gap: 30px;
+    }
+}
+
+.skills-image{
+    width: 250px;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .skills-image{
+        display: none
+    }
+}
+
+
+.skills{
+    display: flex;
+    border: 1px solid green;
+}    
+
+.social a{
+    text-decoration: none;
+    list-style: none;
+}
+
+@media (max-width:768px) {
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.footer p{
+    background-color: #1275de;  
+    margin: 0 !important;
+    font-size: 13px;
+}
+
+@media (max-width:768px){
+    .footer p{
+        font-size: 10px;
+    }
+}
+
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+    z-index: 99999;
+    border: none;
+    outline: none;
+    background-color: #1274de;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+@media (max-width:786px) {
+    #scrollToTopBtn{
+        font-size: 1.2em;
+    }
+}
+
+#scrollToTopBtn:hover {
+    background-color: #08294b;
+    color: #1274de;
+}

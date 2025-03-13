@@ -119,15 +119,15 @@
                     </div>
                      <div class="service rounded-3 p-3" style="width: 18rem; border: 1px solid #1274de;">
                          <div class="s-body p-3">
-                            <i class="bi bi-kanban fs-4 text-white"></i>
-                           <h5 class="s-title text-white mt-3" style="font-size: 18px">Program/Project Manager</h5>
+                            <i class="bi bi-code-slash fs-4 text-white"></i>
+                           <h5 class="s-title text-white mt-3" style="font-size: 18px">Web Django Developer</h5>
                            <p class="s-text mt-3 text-white" style="font-size:13px">With supporting text below as a natural lead-in to additional content.</p>
                          </div>
                     </div>
                      <div class="service rounded-3 p-3" style="width: 18rem; border: 1px solid #1274de;">
                          <div class="s-body p-3">
-                            <i class="bi bi-kanban fs-4 text-white"></i>
-                           <h5 class="s-title text-white mt-3" style="font-size: 18px">Program/Project Manager</h5>
+                            <i class="bi bi-pc-display fs-4 text-white"></i>
+                           <h5 class="s-title text-white mt-3" style="font-size: 18px">Virtual Assistant</h5>
                            <p class="s-text mt-3 text-white" style="font-size:13px">With supporting text below as a natural lead-in to additional content.</p>
                          </div>
                     </div>
@@ -223,26 +223,43 @@
                 </div>
             </div>
             
-            {% comment %} <div class="cardgroup d-flex mx-auto mt-5">
-                {% for project in projects %}
-                    <div class="card1 border-0"  style="width: 18rem;">
-                        {% if project.image %}
-                            <img src=" {{project.image.url}} " class="card-img-top" alt="{{ project.title }}">                   
-                        {% else %}
-                            <img src=" {% static 'my_porfolio/Images/Pink minimal new website instagram post.png' %} " class="card-img-top" alt="{{ project.title }}">   
-                        {% endif %}                
-                        <div class="cardbody p-3 rounded-bottom-3">
-                        <h5 class="cardtitle text-capitalize" style="font-size: 18px; color:#1274de">{{ project.title }}</h5>
-                        <p class="cardtext text-white" style="font-size: 13px">{{ project.description }}</p>
-                        {% if project.link %}
-                            <a href="{{ project.link }}" class="text-decoration-none border-0" style="font-size: 13px;" target="_blank">Live Demo</a>
-                        {% else %}
-                            <a href="#" class="text-decoration-none border-0" style="font-size: 13px;" target="_blank">Live Demo</a>
-                        {% endif %}
+            <div class="cardgroup d-flex mx-auto mt-5 px-5">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto g-4"> 
+                    {% for project in projects %}
+                        <div class="col mx-auto">
+                            <div class="card1 border-0"  style="width: 18rem;">
+                                <div class="card-img-container" style="height: 200px; overflow:hidden;">
+                                    {% if project.image %}
+                                        <img src=" {{project.image.url}} " class="card-img-top w-100 h-100 object-fit-cover" alt="{{ project.title }}">                   
+                                    {% else %}
+                                    <div class="bg-secondary w-100 h-100 d-flex align-items-center justify-content-center">
+                                        <span class="text-muted fs-4">No Image</span>
+                                    </div>   
+                                    {% endif %}                
+                                </div>
+                                <div class="cardbody p-3 rounded-bottom-3">
+                                <h5 class="cardtitle text-capitalize" style="font-size: 18px; color:#1274de">{{ project.title }}</h5>
+                                <p class="cardtext text-white" style="font-size: 13px">{{ project.description }}</p>
+                                {% if project.link %}
+                                    <a href="{{ project.link }}" class="text-decoration-none border-0" style="font-size: 13px;" target="_blank">Live Demo</a>
+                                {% else %}
+                                    <a href="#" class="text-decoration-none border-0" style="font-size: 13px;" target="_blank">Live Demo</a>
+                                {% endif %}
+                                </div>
+                            </div>
                         </div>
+                    {% endfor %}
+                </div>
+                {% if projects.count > 3 %}
+                <div class="d-flex justify-content-center mt-4">
+                    <div class="pagination-controls">
+                        <button id="prev-btn" class="btn btn-outline-primary me-2" disabled>&lt;</button>
+                        <span id="page-indicator" class="align-self-center mx-2">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                        <button id="next-btn" class="btn btn-outline-primary ms-2">&gt;</button>
                     </div>
-                {% endfor %}
-            </div> {% endcomment %}
+                </div>
+                {% endif %}
+            </div>
         </section>
 
          <!-- Contact  -->

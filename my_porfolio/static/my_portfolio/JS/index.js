@@ -90,7 +90,7 @@ links.forEach(link =>{
 //CV download
 document.getElementById('download-btn').addEventListener('click', function(){
     const downloadLink = document.createElement('a');
-    downloadLink.href = '/AMARACHUKWU AGUOLU DIVINE CV.pdf';
+    downloadLink.href = encodeURI("AMARACHUKWU AGUOLU DIVINE CV.pdf");
     downloadLink.download = 'AMARACHUKWU AGUOLU DIVINE CV.pdf';
     document.body.appendChild(downloadLink);
     downloadLink.click();
@@ -118,7 +118,82 @@ function topFunction() {
 
 myButton.addEventListener("click", topFunction)
 
-// Display Message
+// Pagination
+document.addEventListener('DOMContentLoaded', function() {
+    // Pagination logic
+    const projectItems = document.querySelectorAll('.project-item');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const currentPageElement = document.getElementById('current-page');
+    const totalPagesElement = document.getElementById('total-pages');
+    
+    if (!projectItems.length) return;
+    
+    // Calculate total pages (3 projects per page)
+    const itemsPerPage = 3;
+    const totalProjects = projectItems.length;
+    const totalPages = Math.ceil(totalProjects / itemsPerPage);
+    
+    // Set total pages display
+    totalPagesElement.textContent = totalPages;
+    
+    let currentPage = 1;
+    
+    // Function to show only current page items
+    function showPage(page) {
+        // Calculate start and end indices for current page
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, totalProjects);
+        
+        // Hide all projects first
+        projectItems.forEach(item => {
+            item.style.display = 'none';
+        });
+        
+        // Show only projects for current page
+        for (let i = startIndex; i < endIndex; i++) {
+            projectItems[i].style.display = '';
+        }
+        
+        // Update button states
+        prevBtn.disabled = page === 1;
+        nextBtn.disabled = page === totalPages;
+        
+        // Update current page indicator
+        currentPageElement.textContent = page;
+        
+        // Store current page in session storage
+        sessionStorage.setItem('portfolioCurrentPage', page);
+        
+        // Scroll to top of portfolio section
+        document.getElementById('portfolio-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Show initial page
+    const savedPage = parseInt(sessionStorage.getItem('portfolioCurrentPage')) || 1;
+    currentPage = (savedPage <= totalPages) ? savedPage : 1;
+    showPage(currentPage);
+    
+    // Add event listeners to buttons
+    prevBtn.addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    });
+    
+    // Hide pagination if we have 3 or fewer projects
+    if (totalProjects <= itemsPerPage) {
+        document.querySelector('.pagination-controls').style.display = 'none';
+    }
+});
 
 
 

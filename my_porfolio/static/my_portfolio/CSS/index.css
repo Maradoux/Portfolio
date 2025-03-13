@@ -306,13 +306,7 @@ body{
     .skills-image{
         display: none
     }
-}
-
-
-.skills{
-    display: flex;
-    border: 1px solid green;
-}    
+} 
 
 .social a{
     text-decoration: none;

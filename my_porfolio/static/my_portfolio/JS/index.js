@@ -90,7 +90,7 @@ links.forEach(link =>{
 //CV download
 document.getElementById('download-btn').addEventListener('click', function(){
     const downloadLink = document.createElement('a');
-    downloadLink.href = encodeURI("AMARACHUKWU AGUOLU DIVINE CV.pdf");
+    downloadLink.href = "static/my_portfolio/CV/AMARACHUKWU AGUOLU DIVINE CV.pdf";
     downloadLink.download = 'AMARACHUKWU AGUOLU DIVINE CV.pdf';
     document.body.appendChild(downloadLink);
     downloadLink.click();

@@ -252,6 +252,13 @@ body{
     width: 500px;
 }
 
+@media (max-width: 768px) {
+    .skills{
+        display: flex;
+        flex-direction: column;
+    }   
+}
+
 .project-container{
     padding: 20px;
     /* text-align: center; */
@@ -295,16 +302,6 @@ body{
 @media (max-width:768px) {
     .project-fluid{
         gap: 30px;
-    }
-}
-
-.skills-image{
-    width: 250px;
-    height: auto;
-}
-@media (max-width: 768px) {
-    .skills-image{
-        display: none
     }
 } 
 

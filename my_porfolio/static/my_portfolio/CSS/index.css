@@ -139,7 +139,6 @@ body{
 @media (max-width: 768px) {
 
     .download button{
-        background-color: #1275de;
         font-size: 12px;
         display: flex;
         flex-direction: column;
@@ -149,13 +148,9 @@ body{
 }
 
 .cta button:hover{
-    color: #1274de;
-    background-color: #1275de45;
-    border: 1px solid white;
+    color: white;
+    background-color:#1274de;
     font-weight: bold;
-    font-size: 15px;
-    /* border-radius: 5px; */
-    /* text-transform: uppercase !important; */
 }
 
 .container{
@@ -193,32 +188,32 @@ body{
     }
 }
 
-/* .experience{
-    justify-content: center;
-    gap: 100px !important;
-    position: relative;
-    width: 100%;
-    height: 400px;
+.head-service{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    padding: 30px;
 }
 
-.exp-container{
-    width: 400px;
-    height: 200px;
-    margin: auto;
-    border-radius: 30px;
-    background-color: #1e1d1d;
+@media (max-width:600px) {
+    .head-service{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 7px;
+    }
 }
 
-.number{
-    width: 60px;
-    height: 60px;
-    bottom: 250px;
-    position: absolute;
-    border-radius: 60%;
-    font-size: 4rem;
-    color: whitesmoke;
-    background-color: var(--primary-color);
-} */
+.dig-skills{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    padding: 30px;
+}
+
+@media (max-width:600px) {
+    .dig-skills{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 7px;
+    }
+}
 
 .cardgroup{
     gap: 100px;
@@ -252,17 +247,11 @@ body{
     width: 500px;
 }
 
-@media (max-width: 768px) {
-    .skills{
-        display: flex;
-        flex-direction: column;
-    }   
-}
-
 .project-container{
     padding: 20px;
     /* text-align: center; */
     font-size: 3rem;
+    text-align: center;
     font-weight: bold;
     background-color: #1e1d1d;
     border-radius: 30px;
@@ -305,6 +294,117 @@ body{
     }
 } 
 
+/* Portfolio Container */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 15px;
+}
+
+/* Project Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 30px;
+    margin-bottom: 2rem;
+}
+
+/* Media queries for responsive grid layout */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Project Card Styling */
+.project-item {
+    display: flex;
+    height: 100%;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image Container with Fixed Aspect Ratio */
+.project-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6c757d;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+/* Project Content */
+.project-content {
+    padding: 1.25rem;
+    background-color: #212529;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #1274de;
+    text-transform: capitalize;
+}
+
+.project-description {
+    font-size: 0.875rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-link {
+    font-size: 0.875rem;
+    color: #1274de;
+    text-decoration: none;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
 .social a{
     text-decoration: none;
     list-style: none;
@@ -339,8 +439,10 @@ body{
     outline: none;
     background-color: #1274de;
     color: #fff;
+    padding: auto;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    padding: 10px;
     border-radius: 50%;
     font-size: 2rem;
 }
@@ -354,4 +456,4 @@ body{
 #scrollToTopBtn:hover {
     background-color: #08294b;
     color: #1274de;
-}
+}   

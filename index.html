@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:10px;
+        padding: 40px;
+      }
+      .box div{
+        background-color: #f0f0f0;
+        height: 150px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+      }
+
+      @media (max-width:600px) {
+        .box{
+            grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>Content</div>
+      <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam odit, eum, libero itaque quo quasi voluptate ad autem iste modi harum velit perspiciatis incidunt excepturi non voluptatibus! Facere quae veritatis magni quasi earum, excepturi perspiciatis reiciendis impedit dicta repudiandae fugiat modi nostrum laboriosam suscipit hic? In, enim. A, necessitatibus?
+      </div>
+    </div>
+  </body>
+</html>

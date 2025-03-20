@@ -269,7 +269,7 @@ body{
     }
 }
 .project-container span{
-    background-color: #060606;
+    background-color: #a4b3cf;
     border-radius: 10px;
     display: grid;
     font-size: 1rem;
@@ -431,6 +431,7 @@ body{
 @media (max-width:768px){
     .footer p{
         font-size: 10px;
+        text-align: center;
     }
 }
 
